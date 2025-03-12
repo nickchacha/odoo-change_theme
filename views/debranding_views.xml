@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- POS Interface Branding -->
-    <template id="pos_debranding" inherit_id="point_of_sale.Chrome" name="POS Debranding">
-        <xpath expr="//div[contains(@class, 'pos-branding')]//img" position="replace">
-            <img src="/change_theme/static/src/img/logo.png" alt="My Brand" style="max-height: 50px;"/>
-            <!-- Or leave empty to remove logo entirely: <t/> -->
-        </xpath>
+    <template id="pos_debranding" name="POS Debranding">
+        <t t-extend="Chrome">
+            <t t-jquery=".pos-branding img" t-operation="replace">
+                <img src="/change_theme/static/src/img/logo.png" alt="My Brand" style="max-height: 50px;"/>
+                <!-- Or leave empty to remove logo entirely: <t/> -->
+            </t>
+        </t>
     </template>
 
-    <!-- POS Receipt Branding -->
-    <template id="pos_receipt_debranding" inherit_id="point_of_sale.OrderReceipt" name="POS Receipt Debranding">
-        <xpath expr="//div[contains(@class, 'pos-receipt-logo')]" position="replace">
-            <!-- Empty to remove logo, or add your custom logo -->
-        </xpath>
-    </template>
-
-    <!-- Main Interface (All Apps) Branding -->
     <template id="web_debranding" inherit_id="web.webclient_bootstrap" name="Web Interface Debranding">
-        <!-- Replace Odoo logo in top-left corner -->
         <xpath expr="//nav[contains(@class, 'o_main_navbar')]//a[contains(@class, 'o_menu_brand')]" position="replace">
             <a class="o_menu_brand" href="#">My Company</a>
-            <!-- Or use an image: <img src="/my_debranding/static/src/img/logo.png" style="max-height: 30px;"/> -->
         </xpath>
     </template>
 
-    <!-- Login Screen: Remove "Powered by Odoo" -->
     <template id="login_debranding" inherit_id="web.login_layout" name="Login Debranding">
         <xpath expr="//div[contains(@class, 'o_company_logo')]" position="replace">
-            <!-- Optional: Add your logo -->
             <img src="/change_theme/static/src/img/logo.png" alt="My Company" style="max-height: 60px;"/>
         </xpath>
         <xpath expr="//div[contains(@class, 'text-center')]//a[contains(., 'Powered by Odoo')]" position="replace">
-            <!-- Replace with nothing or custom text -->
             <span>My Company</span>
         </xpath>
     </template>
 
-    <!-- Browser Tab Title -->
     <template id="tab_debranding" inherit_id="web.base" name="Tab Title Debranding">
         <xpath expr="//title" position="replace">
             <title>My Company</title>
