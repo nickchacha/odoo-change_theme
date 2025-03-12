@@ -3,7 +3,7 @@
     <!-- POS Interface Branding -->
     <template id="pos_debranding" inherit_id="point_of_sale.Chrome" name="POS Debranding">
         <xpath expr="//div[contains(@class, 'pos-branding')]//img" position="replace">
-            <img src="/my_debranding/static/src/img/logo.png" alt="My Brand" style="max-height: 50px;"/>
+            <img src="/change_theme/static/src/img/logo.png" alt="My Brand" style="max-height: 50px;"/>
             <!-- Or leave empty to remove logo entirely: <t/> -->
         </xpath>
     </template>
@@ -28,7 +28,7 @@
     <template id="login_debranding" inherit_id="web.login_layout" name="Login Debranding">
         <xpath expr="//div[contains(@class, 'o_company_logo')]" position="replace">
             <!-- Optional: Add your logo -->
-            <img src="/my_debranding/static/src/img/logo.png" alt="My Company" style="max-height: 60px;"/>
+            <img src="/change_theme/static/src/img/logo.png" alt="My Company" style="max-height: 60px;"/>
         </xpath>
         <xpath expr="//div[contains(@class, 'text-center')]//a[contains(., 'Powered by Odoo')]" position="replace">
             <!-- Replace with nothing or custom text -->
